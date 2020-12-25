@@ -1,38 +1,260 @@
-.App {
-  text-align: center;
+.App{
+  height: 100vh;
+  width: 100%;
+  color: white;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.main-container{
+  width: 100%;
   min-height: 100vh;
+  background-image: linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #6de3e6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inner-container{
+    height: 600px;
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.308);
+    border-radius: 17px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Join */
+.inner-container-join{
+  height: 600px;
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.308);
+  border-radius: 17px;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-evenly;
+}
+.app-name{
+  font-family: 'Langar', cursive;
+  color: #00333b;
+  font-size: 3rem;
+}
+.app-label{
+  font-size: 1.6rem;
+}
+.h-line{
+  width: 90%;
+  border-bottom: 3px solid white;
+}
+.joining-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.join-btn{
+  margin-top: 5px;
+}
+.joining-form input{
+  margin: 8px 0px;
+  background-color: transparent;
+  font-family: 'Baloo 2', cursive;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 2px solid white;
+  padding: 5px 10px;
+  width: 70%;
+  outline: none;
+}
+.joining-form input::placeholder{
+  color: rgba(245, 245, 245, 0.699);
+}
+.joining-form input:focus{
+  border-bottom: 2px solid rgb(20, 121, 128);
+}
+/* navigation */
+.nav{
+  height: 10%;
+  background-color: rgba(0, 0, 0, 0.345);
+  border-radius: 17px 17px 0px 0px;
+  display: flex;
+  align-items: center;
+  position: relative;
+} 
+.icon-img{
+  height: 64%;
+  border-radius: 12px;
+  margin: 10px 15px;
+}
+.room-name{
+  font-size: 1.3rem;
+}
+.burger{
+  display: flex;
+  flex-direction: column;
+  z-index: 4;
+  cursor: pointer;
+  margin: 0px 16px;
+  position: absolute;
+  right: 0px;
+}
+.burger div{
+  transition: all 0.3s ease;
+}
+.line1{
+  width: 25px;
+  border-top: 3px solid rgb(255, 255, 255);
+  padding: 1.3px 0px;
+}
+.line2{
+  width: 18px;
+  border-top: 3px solid rgb(255, 255, 255);
+  padding: 1.3px 0px;
+}
+.line3{
+  width: 22px;
+  border-top: 3px solid rgb(255, 255, 255);
+  padding: 1.3px 0px;
+}
+.toggle .line1{
+  transform: rotateZ(-45deg) translate(-10px, 5px);
+}
+.toggle .line2{
+  opacity: 0;
+}
+.toggle .line3{
+  transform: rotateZ(45deg) translate(-4px, 4px);
+  width: 25px;
+}
+.users{
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #000000c7;
+  width: 66%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-clip-path: circle(10px at 10% 10%);
+  clip-path: circle(10px at 102% 0%);
+  opacity: 0;
+  pointer-events: none;
+  overflow-y: auto;
+  transition: all 0.5s ease;
+  max-height: 350px;
+}
+.show-users{
+  pointer-events: all;
+  opacity: 1;
+  -webkit-clip-path: circle(550px at 10% 10%);
+  clip-path: circle(550px at 102% 0%);
+}
+.users p{
+  width: 95%;
+  background-color: #ffffff30;
+  padding: 3px 0px;
+  margin: 5px 0px;
+  border-radius: 7px;
+  text-align: center;
+}
+.leave-btn{
+  background-color: #aa2121;
+  border: none;
+  font-size: 1.1rem;
   color: white;
+  padding: 1px 13px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-family: 'Baloo 2', cursive;
+  outline: none;
+  margin: 9px 0px;
+}
+.leave-btn:active{
+  background-color: #4d0e0e;
+}
+/* Sender */
+.sender-bar{
+  position: absolute;
+  bottom: 0;
+  height: 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 0px 0px 17px 17px;
+  background-color: rgba(0, 0, 0, 0.345);
+}
+.sender-input{
+  margin: 0px 20px;
+  background-color: transparent;
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.05rem;
+  border: none;
+  padding: 5px 10px;
+  width: 70%;
+  border-radius: 13px;
+  outline: none;
+}
+.sender-input::placeholder{
+  color: rgba(245, 245, 245, 0.699);
+}
+.send-btn {
+  background-color: #28856f;
+  border: none;
+  font-size: 1.1rem;
+  color: white;
+  padding: 1px 13px;
+  margin: 0px 6px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-family: 'Baloo 2', cursive;
+  outline: none;
+}
+.send-btn:active{
+  background-color: #1f6857;
+}
+/* message box */
+.msg-box{
+  width: 100%;
+  height: 80%;
+  overflow-y: auto;
+}
+.curr-msg{
+  float: right;
+  clear: both;
+  background-image: linear-gradient(to right, #288551, #28856f, #287885);
+  margin: 4px 12px;
+  border-radius: 12px 12px 0px 12px;
+  padding: 3px 10px;
+  max-width: 80%;
+  min-width: 10%;
+}
+.other-msg{
+  float: left;
+  clear: both;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.345), rgba(0, 0, 0, 0.267));
+  margin: 4px 12px;
+  border-radius: 12px 12px 12px 0px;
+  padding: 3px 10px;
+  max-width: 80%;
+  min-width: 10%;
+} 
+.other-msg h3{
+  font-size: 1.1rem;
+  color: #dd4800;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* media query */
+@media only screen and (max-width: 800px){
+  .main-container{
+    background-image: linear-gradient(to bottom, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #6de3e6 100%);
   }
-  to {
-    transform: rotate(360deg);
+  .inner-container,
+  .inner-container-join{
+    height: 100vh;
+    width: 100%;
+    border-radius: 0px;
   }
+  .nav,
+  .sender-bar{
+    border-radius: 0px;
+  }
+  
 }
