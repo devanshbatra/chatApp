@@ -10,8 +10,8 @@ const App = () => {
     <div className="App">
       <div className="main-container">
         <Router>
-          <Route path="/" exact component={Join} />
-          <Route path="/chat" component={Chat} />
+          <Route path="/chatApp" exact component={Join} />
+          <Route path="/chatApp/chat" component={Chat} />
         </Router>
       </div>
     </div>
